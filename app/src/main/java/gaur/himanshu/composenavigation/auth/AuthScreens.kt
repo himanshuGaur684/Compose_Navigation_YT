@@ -11,6 +11,7 @@ import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import gaur.himanshu.composenavigation.AuthNavGraph
 import gaur.himanshu.composenavigation.NavGraphs
+import gaur.himanshu.composenavigation.destinations.HomeScreenDestination
 import gaur.himanshu.composenavigation.destinations.LoginScreenDestination
 
 @AuthNavGraph(start = true)
@@ -41,7 +42,7 @@ fun LoginScreen(navigator: DestinationsNavigator) {
             Text(text = "Login Screen")
             Spacer(modifier = Modifier.height(10.dp))
             Button(onClick = {
-                navigator.navigate(route = NavGraphs.home.route)
+                navigator.navigate(HomeScreenDestination(value="this is value"))
             }) {
                 Text(text = "Go to Home Graph")
             }

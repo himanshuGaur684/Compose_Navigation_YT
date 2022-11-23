@@ -19,11 +19,11 @@ import gaur.himanshu.composenavigation.destinations.ProfileScreenDestination
 @HomeNavGraph(start = true)
 @Destination
 @Composable
-fun HomeScreen(navigator: DestinationsNavigator) {
+fun HomeScreen(navigator: DestinationsNavigator,value:String="") {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Column {
 
-            Text(text = "Home Screen")
+            Text(text = "Home Screen ${value}")
             Spacer(modifier = Modifier.height(14.dp))
             Button(onClick = {
                 navigator.navigate(
@@ -53,8 +53,6 @@ fun ProfileScreen(
             Text(text = "Profile Screen ${id} ${fakeData.name}  ${fakeData.age} ${fakeData.isAdult}")
             Spacer(modifier = Modifier.height(14.dp))
             Button(onClick = {
-                // 1st variant of popBackStack()
-//                navigator.popBackStack()
                 navigator.navigate(AccountScreenDestination)
             }) {
                 Text(text = "Go Back")
@@ -72,14 +70,11 @@ fun AccountScreen(navigator: DestinationsNavigator) {
             Text(text = "Account Screen")
             Spacer(modifier = Modifier.height(14.dp))
             Button(onClick = {
-                // 2st variant of popBackStack()
                 navigator.popBackStack(
                     HomeScreenDestination,
                     inclusive = false,
                     saveState = false
                 )
-                // inclusive true means it will pop HomeScreenDestination too
-                // inclusive false means it will not pop HomeScreenDestination
             }) {
                 Text(text = "Go Back")
             }

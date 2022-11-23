@@ -33,7 +33,7 @@ fun NavGraphBuilder.homeNavigation(navController: NavController) {
         startDestination = HomeScreenDestination.route
     ) {
         composable(HomeScreenDestination) {
-            HomeScreen(navigator = destinationsNavigator(navController))
+            HomeScreen(navigator = destinationsNavigator(navController), value = navArgs.value)
         }
         composable(
             ProfileScreenDestination
