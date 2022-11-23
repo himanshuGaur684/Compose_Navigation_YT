@@ -1,4 +1,4 @@
-package gaur.himanshu.composenavigation
+package gaur.himanshu.composenavigation.home
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
@@ -10,11 +10,14 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
+import gaur.himanshu.composenavigation.HomeNavGraph
+import gaur.himanshu.composenavigation.ProfileScreenViewModel
 import gaur.himanshu.composenavigation.destinations.AccountScreenDestination
 import gaur.himanshu.composenavigation.destinations.HomeScreenDestination
 import gaur.himanshu.composenavigation.destinations.ProfileScreenDestination
 
-@Destination(start = true)
+@HomeNavGraph(start = true)
+@Destination
 @Composable
 fun HomeScreen(navigator: DestinationsNavigator) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -36,6 +39,7 @@ fun HomeScreen(navigator: DestinationsNavigator) {
     }
 }
 
+@HomeNavGraph
 @Destination
 @Composable
 fun ProfileScreen(
@@ -59,6 +63,7 @@ fun ProfileScreen(
     }
 }
 
+@HomeNavGraph
 @Destination
 @Composable
 fun AccountScreen(navigator: DestinationsNavigator) {

@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import gaur.himanshu.composenavigation.home.FakeData
 import javax.inject.Inject
 
 @HiltViewModel
